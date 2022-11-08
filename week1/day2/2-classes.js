@@ -38,7 +38,13 @@ class Cake {
         // This is code, so I can validation logic here
         // If the provided parameter is not a number, do nothing
         if (typeof slices == 'number') {
+            if (slices < 0) {
+                throw new RangeError('Slices must not be negative');
+            }
             this.#slices = slices;
+        } else {
+            // Used for when the wrong data type is passed
+            throw new TypeError('Slices must be a number');
         }
     }
 
@@ -109,3 +115,5 @@ console.log(raspberryCheescake.slices); // Calls the getter
 Cake.description(); // Since it's static, it exists on the Cake class itself
 
 console.log(Cake.name);
+
+new Cake('', null, null, -1);
