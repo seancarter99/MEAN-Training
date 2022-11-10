@@ -15,8 +15,6 @@
  * 
  */
 
-
-
 /**
  * Restaurant example: 
  * 1. I check in with the hostess
@@ -90,7 +88,11 @@ const makeNetworkRequest = (userLogin, userData) => {
     })
 }
 
-const myRequest = makeNetworkRequest('success', {name: 'haley'})
+// randomize if the users log in is successful or not
+const outcomes = ['success', 'fail']
+const randomNumber = Math.floor(Math.random()*2)
+
+const myRequest = makeNetworkRequest(outcomes[randomNumber], {name: 'haley'})
 
 myRequest
     .then(data=>{ // .then returns a promise as well so you can chain them 
@@ -111,4 +113,7 @@ myRequest
     .catch((error)=>{
         console.log(' .catch')
         console.error(error)
+    })
+    .finally(()=> {
+        console.log('finally block')
     })

@@ -4,8 +4,8 @@ setTimeout(() => console.log('2'), 1000);
 
 setTimeout(() => console.log('3'), 0);
 
-console.log('4');
+Promise.resolve('4').then(data => console.log(data)); 
 
-// 1 4 2 3 
-// 1 4 3 2 
-// 1 2 3 4 
+console.log('5');
+
+// 1 - 5 - 3 - 4 - 2
