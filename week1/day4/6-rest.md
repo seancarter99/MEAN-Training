@@ -1,5 +1,5 @@
 # REST
-Representational State Transfer
+REpresentational State Transfer
 
 "RESTful API" -> An API that conforms to REST standards
 
@@ -68,3 +68,5 @@ This is useful as to not break your users' websites if they depend on your API (
 
 GET http://mysite.com/v1/movies/37 -> 'Star Wars'
 GET http://mysite.com/v2/movies/37 -> {title: 'Star Wars', director: 'George Lucas'}
+
+Example: open weather API

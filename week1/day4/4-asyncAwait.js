@@ -32,6 +32,7 @@ withAwait();
 
 // ------------------------------------------------------------------
 
+// could look for specific items and return rejection if store is out of stock! 
 const shop = async () => {
     await new Promise((resolve, reject)=> {
         setTimeout(()=>{
@@ -50,15 +51,18 @@ const chop = async () => {
     })
 }
 
-// const makeSauce = async () => {
-//     await new Promise((resolve, reject)=> {
-//         setTimeout(()=>{
-//             console.log('making sauce');
-//             resolve();
-//         }, 2000)
-//     })
-// }
+const makeSauce = async () => {
+    await new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            console.log('making sauce');
+            resolve();
+        }, 2000)
+    })
+}
 
+// setTimeout does NOT return a promise. Async/Await needs a promise to return. 
+// If not returning a promise, will move on to baking at the same time.
+// But thats not what we want! We need our sauce before we can put the lasagna together and bake it! 
 // const makeSauce = async () => {
 //     await setTimeout(()=>{
 //             console.log('making sauce');
@@ -84,6 +88,10 @@ const eat = async () => {
     })
 } 
 
+
+// we want to make them all async because they each take time and we dont know how exactly how much time.
+// Could wait in line at the store, or be the only customer. We are not going to sit here and block the entire JS code execution while waiting.
+
 const makeLasagna = async () => {
     /**
      * tasks to perform:
@@ -93,16 +101,19 @@ const makeLasagna = async () => {
      * 4. bake lasagna
      * 5. eat
      */
-    try {
-        await shop();
+    try { // with async/await we use a try catch block to handle errors in our code! 
+        await shop(); // waiting for shop before moving on to chop vegetables 
         await chop();
         await makeSauce();
         await bake();
         await eat();
     } catch (error) {
         console.error(error)
-        console.log('ordering take out')
+        console.log('ordering take out') // if anything goes wrong at any step, we're getting take out instead.... 
     }
 }
 
 makeLasagna();
+
+// cleaner, easier to read syntax with async/await than promises. This is a lot more similar to how we normally write our code.
+// our brains probably have an easier time following this. at least mine does.....

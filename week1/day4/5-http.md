@@ -7,7 +7,6 @@ It occurs Layer 7 of the OSI (Application Layer)
 
 Protocol for transfering data across the internet
 
-
 # HTTP Request
 Is made by the client and sent to a server
 The request will carry information on it such as any data, the request method, and any additional meta data
@@ -25,6 +24,7 @@ GET - Retrieve a resource (R)
 POST - Creating a resource (C)
 PUT - Updating a resource (Putting in a new tire) (U)
 DELETE - Deletes a resources (D)
+
 (CRUD acronym - create, read, update and delete)
 
 Others:
@@ -62,12 +62,16 @@ Specific Status Codes
 
 # Idempotency
 - The ability to perform/apply the same method multiple times in conjunction and have the same effect each time
+
 - GET is idempotent because I can request the same resource many times without changing what I get back
   - Think of this as looking at a piece of cake. I can look as much as I want without altering things
+
 - PUT is idempotent because if I update something many times, it's functionally the same effect
     - That's still a job well done
+
 - DELETE is idempotent
   - Same reason. Deleting multiple times will still result in it being deleted so job well done
+  
 - POST is NOT idempotent
   - Creating a resource is not the same effect because it's brand new
   - Doing two POST requests should result in 2 new entities being created
