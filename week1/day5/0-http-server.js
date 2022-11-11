@@ -17,8 +17,10 @@ const server = http.createServer((request, response)=>{
         response.write('<h1>HOME PAGE</h1>')
 
         if (request.method === 'GET'){
+            console.log('incoming get request');
             response.write('<h2>GET REQUEST</h2>')
         } else if (request.method === 'POST'){
+            console.log('incoming post request');
             response.write('<h2>POST REQUEST</h2>')
         }
         
@@ -26,6 +28,15 @@ const server = http.createServer((request, response)=>{
 
     } else if (request.url === '/animals'){
         response.write('<h1>ANIMALS PAGE</h1>')
+        if (request.method === 'GET'){
+            console.log('incoming get request');
+            response.write('<h2>GET REQUEST</h2>')
+        } else if (request.method === 'POST'){
+            console.log('incoming post request');
+            response.write('<h2>POST REQUEST</h2>')
+        }
+        
+
         response.end();
     } else {
         response.writeHead('404');
