@@ -1,0 +1,25 @@
+ul li { /* This selects all li elements whose parent is an ul */
+    display: inline;
+}
+ul li:not(:last-child)::after {
+    content: "  |  ";
+}
+h1 {
+    color: #1CE783;
+    
+    transition: color 2s;
+}
+h1:hover {
+    color: green;
+    transform: scale(50px);
+}
+a:visited {
+    color: rgb(0, 204, 0);
+}
+.blue  {
+    background-color: aqua;
+
+}
+.grey {
+    background-color: lightgrey;
+}

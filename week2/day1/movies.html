@@ -1,42 +1,139 @@
 <!DOCTYPE html> <!-- This tells your browser the document is HTML5 -->
 <!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd"> this was how we declared the doctype in html4 --> 
+   "http://www.w3.org/TR/html4/strict.dtd"> this was how we declared the doctype in html4 -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+    <!-- Internal CSS -->
+    <style> 
+        #about { 
+            background-color: black;
+            color: white;
+        }
+        p {
+            color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- h1 is a block element -->
     <h1>Movies</h1>
     <h2>You want to see them, we got them!</h2>
-    <p>These are the movies available:</p>
-    <ul>
-        <li>
-            Legend
-        </li>
-        <li>
-            Pans Labrynth
-        </li>
-        <li>
-            American Gangster
-        </li>
-        <li>
-            I am Legend
-        </li>
-    </ul>
-    <p>Trending right now</p>
-    <ol>
-        <li>American Gangster</li>
-        <li>I am Legend</li>
-        <li>Pans Labrynth</li>
-    </ol>
-    <p>Now Playing in <strong>Theaters</strong></p>
-    <dt>Wakanda Forever</dt>
-    <dd>PG-13</dd>
-    <dt>The Menu</dt>
-    <dd>Rated R</dd>
+    <h3><a href="#about">About</a><span> | </span><a href="categories.html">Categories</a></h3>
+    <div>
+        <p>These are the movies available:</p>
+        <ul>
+            <li>
+                Legend
+            </li>
+            <li>
+                Pans Labrynth
+            </li>
+            <li>
+                American Gangster
+            </li>
+            <li>
+                I am Legend
+            </li>
+        </ul>
+    </div>
+    <section>
+        <p>Trending right now</p>
+        <ol>
+            <li>American Gangster</li>
+            <li>I am Legend</li>
+            <li>Pans Labrynth</li>
+        </ol>
+    </section>
+    <section>
+        <a target="_blank"
+            href="https://www.google.com/search?q=movies+now+playing+in+theaters&oq=movies+now+playing+in+theaters&aqs=chrome..69i57.4679j0j7&sourceid=chrome&ie=UTF-8">Now
+            Playing in <strong>Theaters</strong></a>
+        <dl>
+            <dt>Wakanda Forever</dt>
+            <img
+                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJYAZAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQUCBAYDB//EADcQAAEEAQMCBAUBBQkBAAAAAAEAAgMEEQUSITFBBhNRcRQiYYGRoWKxwdHxFSMyQkVSU3KiFv/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABkRAQEBAQEBAAAAAAAAAAAAAAABAhExQf/aAAwDAQACEQMRAD8A+HnqmUPVQgnKZUIgnKZUIgnKZUIgnKZUIgnKZUIgyaevuiN7+6IIPVQpPVQgIiICIiAiIgIiICIiDJvf3RG9/dEEHqoUnqoQEREBF6V4X2Z44IRukkcGMHqScBdE3wD4nP8Apbx7yM/n9CpbxrONa8jmUV5H4T1eUAshjOSQB5rc5H9Fo6rpVvSZ2w3WNY9zdwAcDxkj+CrNnGiiIgIiIMm9/dEb390QQeqhbVCOvLP5dnzA13RzCBg/gqwo6fSl1J9aw20I2kHdG9udpx+z9UFKitYKVY1b9iwydjazwxgDxkuJIDT8vUYySvXU9Ck0/TKlx+S5+BOz/jLhln5GfuEGxS0SVnwFutaxK+WLadgOwlu/PB7DHB/djPRS6/4layMv12VzzaZWe012Ya9waSfqOfvhUcrbPwNBtCW5usM/wumGyNjQPp+11WzWEeq61X02lduyN3B0tl842MDSCS35ckDHBP04SyNZ3rPlWUX9qwhj26mzyiWlpZXZn+8eQSBnBwXDOP8AdwtTUdHn1mWCa5qPmPe1oiDYo2n5mufg/NjPB/otSjQtx+L4/D2q2LQEdjywY5NpaQPlcMg9gCs/E9K94etxltyza0ewB5MrJNpc3H+EnHBAP3Bz9BWLba5OxGIrEkbXbwx5aHYxnB6rzXXajpOmxN1ezLDdlNOfa4/EtBkJLRknZxy4laUGjUtV0yxZ0iWZtquAZKk2CS31a4dfwEsVzyK60LRDqdW1M5xbtGyD0dL1x+B/6CpiC04IwfRQS3v7oje/uiACWuDh1ByF0Fu3DDTp2IhiScASAH/I0n+ePsuezgq5siJlClO2pE98hcws5xxgjAz6koLZwimu14nwh1dgN620tyHnbx+QMj/svPTtV/th96pdjjjFwF5cwuPzZHPJPTAPHofVV5bF8I6/IyVgYA0QtecbwcZzngY/cs9EbX1WxJUkIqWHsLopo3ENLhztcPQ88qjcsTv0+rTq3Iz5Dsxyg5xw1g/HX94WcrItA0x74a0V6K4/HmO3gNjwHBpcxw5Jx35A+qahXq1fDtC5JWNizJNJHYidO/a0tOOgdwrc6BQMXhW2181avrE4gm02SdxLW7tpe3kHafr6hPRY1ZD4m1Tw74jirltmN7YLoYDg43AO654x+oXPeEtdhdVk8N+IWGSjLlsW920wP9Mnpz09D9CmpSQaNqlqvLo9kaXWsuha74qZm8Bxxt5wTgE/ZePi/RI63impFpUbZ6moRRTVC97niRruu5xOeue/AwkvBc34JrWleMIIa0ss0moNEQYw5O143DH2/RUvhurPoD7GoanE6EuiMUMDuJJXEjgN69v1W6K2nX9J1rUadCSwatlkVVvnzOL2kgE43ZOeSqKv5DdSq1pqHwc7p2NeBJJnY/rnLsgjg/dOostX1h2lP03SxVgxQjDpXBhaXSP5eeCAeCACQeirvF2nmveFyGNza9r5wSMAP7/nr91vTV6f/wBM3Ta2nGaDzGtjkE0m5uQCTndjAJJVHrIFXULEFazJJCSCSXk574Prgpz6NBvdEb3RRUYycBWz5LMFCHyZNronEvDH84IGMjv0KqT1UILKrZZNVnpzyNjEh3NeejXZzz9Ov5XpQbFp0psTTQyODSGRxv3E578dFUog6N921FQgdXc1tqvMZnBrwSQ7J6dx6j6q1ieNZ1rTdbpv2yQSxusxSy8M2kHe3PRvqO3344de9a3YquJrzSRE9Sx2MoOj1rTdRualcfPeqitLZe9hkthzQNxwQATjg/qvFuutZoZpuzJNUMkdKVww5jH8O/j7ZC517i9xc7kk5JWKDp6dazF4Xc3z4K/xNjczfYawkADkjOQPTK1q+nPFmGxNdqyzNkZhkcwccAjLnHoAAPXJ4VCio6F2pWqd2bE5+GsYyGO+RxAA5APRVdumWh00R3RZ5O4Etz2P81pInRkO/uiDv7ooIPVQpPVQgIiICIiAiIgIiICIiDJvf3RG9/dEEHqoUnqoQEREBERAREQEREBERBk3v7oje/uiCD1UKT1UICIiAiIgIiICIiAiIgyb390Rvf3RBBHKYREDCYREDCYREDCYREDCYREDCYREEgKURB//2Q==">
+            <dd>PG-13</dd>
+            <dt>The Menu</dt>
+            <img
+                src="data:image/jpeg;base64,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">
+            <dd>
+                Rated R
+            </dd>
+        </dl>
+    </section>
+    <section>
+        <table style="border: 1px black solid; color: blue; text-align: center; background-color: pink;"> <!-- inline style -->
+            <thead>
+                <tr>
+                    <th>Show Time</th>
+                    <th>Movie</th>
+                    <th>Length</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>1:00 PM</td>
+                    <td>Wakanda Forever</td>
+                    <td>2hr 41min</td>
+                </tr>
+                <tr>
+                    <td>4:00 PM</td>
+                    <td>The Menu</td>
+                    <td>1hr 47min</td>
+                </tr>
+                <tr><td colspan="3">All Showtimes are in EST</td></tr>
+            </tbody>
+        </table>
+        
+    </section>
+    <section>
+        <p>
+            THis is a bunch of text about movies<br>
+            THis is a bunch of text<br>
+            THis is a bunch of text
+            THis is a bunch of text
+            THis is a bunch of text
+            THis is a bunch of text
+            THis is a bunch of text
+            THis is a bunch of text
+            THis is a bunch of text
+        </p>
+    </section>
+    <br> <!-- This is an empty tag, it does not need a closing tag-->
+    <hr>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p id="about">
+        This page is brought to you by Appian August 2022 Skillstorm Batch!
+    </p>
 </body>
+
 </html>
