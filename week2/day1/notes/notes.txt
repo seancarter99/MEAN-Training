@@ -1,0 +1,101 @@
+Happy Monday!
+
+This week's topics:
+[+] HTML
+[+] CSS
+[ ] JavaScript (frontend)
+[ ] Angular
+
+Lecturer - Erica
+
+Intros - Location? PC or Mac?
+
+Monday Topics
+-------------
+
+HTML
+- html = hypertext markup language
+- why use markup?
+  - rendering
+  - search
+- hypertext = links between pages
+- structure = hierarchy/tree
+- tag = wrap content & gives meaning
+  - ex: <p>content</p>
+- meta tags = information about our page, not rendered to the page
+- ex: title, author, keywords (SEO), icon
+
+
+
+- block elements - take the entire width, always start on the next line
+- inline elements - size is just big enough for its contents
+
+
+
+- semantic tags = give more meaning to the sections of the document
+
+Tags We've Seen So Far
+----------------------
+- p = paragraph
+- html = root element
+- head = meta data
+- body = content rendered
+- title = tab name
+- h1,h2 = headings (6 levels available)
+- ul = unordered list
+- li = list item
+- ol = ordered list
+- li = list item
+- dl = details list
+- dt = detailed-item title
+- dd = details
+- section
+- nav
+- main
+TODO
+- a = anchor 
+ex (https://www.google.com/search?q=movies+now+playing+in+theaters&oq=movies+now+playing+in+theaters&aqs=chrome..69i57.4679j0j7&sourceid=chrome&ie=UTF-8)
+- table
+- thead
+- tbody
+- tr
+- td
+- th
+
+CSS
+----
+3 ways to apply styles
+  1. inline
+  2. internal
+  3. external
+selectors
+- tag names
+- id's use #idname
+- classes use .clasname
+- pseudo classes use :classname ex: hover
+- relative vs absolute units
+  - use absolute for font and border
+  - use relative the rest the time
+
+- color
+- background-color
+- display: inline (or block or none etc.)
+- width
+- height
+- 
+TODO
+- size
+- position - absolute vs relative
+- box model - padding/margin
+- flexbox - wrap, justify, align, align-content
+
+PRACTICE
+- Create a html page about a vacation you took playing around with an image gallery 
+-- challenge: scale up your image when you hover!
+
+Visual Studio Code
+------------------
+- Install Live Server extension
+- Type ! [ENTER] to auto-generate basic html page elements
+- Right click > Open with Live Server
+
