@@ -13,11 +13,14 @@ const movieSchema = new Schema({
         name: {
             // Because of this, I can add additional details to my object validation
             type: String,
-            required: true // false by default
+            required: [true, 'Actor must have name'] // false by default
         },
         dob: Date // DOB is currently optional
     }],
-    releaseYear: Number,
+    releaseYear: {
+        type: Number,
+        validate: [year => year >= 1700, 'Release Year must be after 1700 AD']
+    },
     imageUrl: String
 });
 

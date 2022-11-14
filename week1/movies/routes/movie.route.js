@@ -4,7 +4,7 @@
 // const router = express.Router();
 
 const router = require('express').Router();
-const { findAllMovies, findMovieById } = require('../controllers/movie.controller.js');
+const { findAllMovies, findMovieById, createMovie, updateMovieById, deleteMovieById } = require('../controllers/movie.controller.js');
 
 // Write an endpoint that returns ALL movies
 // GET /movies
@@ -27,6 +27,39 @@ router.get('/:id', async (req, res) => {
         // If a promise is rejected (or an error thrown), the catch will execute
         // This catch will assume that no movie was found
         res.status(204).json({msg: err}); // Change the status code, and send an empty response
+    }
+});
+
+// POST (CREATE)
+
+router.post('/', async (req, res) => {
+    try {
+        const movie = await createMovie(req.body);
+        res.status(201).json(movie);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// PUT (UPDATE)
+
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedMovie = await updateMovieById(req.params.id, req.body);
+        res.json(updatedMovie); // 200 by default
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// DELETE (DELETE)
+
+router.delete('/:id', async (req, res) => {
+    try {
+        await deleteMovieById(req.params.id);
+        res.send();
+    } catch (err) {
+        res.status(400).json(err);
     }
 });
 
