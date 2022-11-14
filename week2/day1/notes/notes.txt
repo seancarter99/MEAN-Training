@@ -52,9 +52,8 @@ Tags We've Seen So Far
 - section
 - nav
 - main
-TODO
-- a = anchor 
-ex (https://www.google.com/search?q=movies+now+playing+in+theaters&oq=movies+now+playing+in+theaters&aqs=chrome..69i57.4679j0j7&sourceid=chrome&ie=UTF-8)
+- a = anchor (links) attributes inclue: href and target
+- link = including external resources, rel="" and href=""
 - table
 - thead
 - tbody
