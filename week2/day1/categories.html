@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div {
+            margin: 0 15vw; /* top/bottom right/left */
+            /* margin-right: 15vw;*/
+            /* margin-left: 15vw;*/
+            /* margin: 15vw; */
+            /* margin: 0 15vw 5vw; */
+            /* margin: 0 15vw 5vw 30vw; clockwise / North East South West*/
+            width: 70vw;
+            height: 50vw;
+        }
+        div.small {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            /* position: absolute;
+            left: 200px;
+            top: 200px; */
+            margin: auto; /* btwn element's border and its neighbor*/
+            border: 5px yellowgreen inset;
+            padding: 1em; /* btwn element and its border*/
+            background-image: linear-gradient(to right, green, yellow, green);
+        }
+        div.blue {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        div.thumbnail {
+            margin: 0;
+            width: 30px;
+            height: 40px;
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Categories</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="#Comedy">Comedy</a>
+            </li>
+            <li>
+                <a href="#Action">Action</a>
+            </li>
+            <li>
+                <a href="#Horror">Horror</a>
+            </li>
+            <li>
+                <a href="#Thriller">Thriller</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="comedy" class="blue">Comedy
+        <div class="grey small">I am small!</div>
+    </div>
+    <div id="action" class="grey container">
+        <h3>Action</h3>
+        <div class="container">
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+            <div class="thumbnail"></div>
+        </div>
+    </div>
+    <div id="horror" style="height: 25vw;" class="blue">Horror</div>
+    <div id="thriller" class="grey">Thriller</div>
+</body>
+</html>
