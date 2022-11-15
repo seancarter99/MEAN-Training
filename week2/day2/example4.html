@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 4</title>
+    <style>
+        .pretty {
+            color: pink;
+        }
+    </style>
+    <script>
+        /* Create a new element on each button click */
+
+        window.addEventListener("DOMContentLoaded", () => {
+
+            let el = document.getElementsByTagName("button")[0];
+            console.log(el);
+
+            el.addEventListener("click", () => {
+
+                let newEl = document.createElement("p");
+                newEl.innerHTML = "Isn't it?!"
+
+                document.getElementById("stuff").appendChild(newEl);
+
+            })
+
+            let el2 = document.getElementsByTagName("button")[1];
+            console.log(el2);
+
+            el2.addEventListener("click", () => {
+            /* Step 1: grab class list */
+            /* Step 2: add to the class list*/
+            document.getElementsByTagName("p")[0].classList.toggle("pretty");
+            console.log(document.getElementsByTagName("p")[0].classList)
+            console.log(document.getElementsByTagName("p")[0].className + " somethingelse")
+            })
+        })
+    </script>
+</head>
+<body>
+    <p class="something">This page is awesome!</p>
+    <div id="stuff"></div>
+    <button>Add Stuff!</button><button>Make Pretty!</button>
+</body>
+</html>
