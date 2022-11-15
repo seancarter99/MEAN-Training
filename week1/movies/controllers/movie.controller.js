@@ -13,4 +13,27 @@ const findMovieById = async id => {
     return movie;
 }
 
-module.exports = { findAllMovies, findMovieById };
+const createMovie = async movieData => {
+    // new Movie() // Our Movie class's constructor may be used to create a movie document
+    const movie = new Movie(movieData);
+    // Can optionally mutate the movie object
+    await movie.save(); // Saves the document to the DB ONLY IF all validations are met
+    // return Promise.resolve(movie); // Equivalent
+    return movie; // Auto wrapped in a Promise due to async
+}
+
+const updateMovieById = async (id, movieData) => {
+    const updatedMovie = await Movie.findByIdAndUpdate(id, movieData);
+    // MongoDB also supports direct object manipulation
+    // movie.title = 'I Am Legend';
+    // movie.save();
+    
+    await updatedMovie.save();
+    return await Movie.findById(id);
+}
+
+const deleteMovieById = async id => {
+    await Movie.findByIdAndDelete(id);
+}
+
+module.exports = { findAllMovies, findMovieById, createMovie, updateMovieById, deleteMovieById };

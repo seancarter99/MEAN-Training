@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config(); // Loads up the process.env object with the .env file contents
 // dotenv.config(); Only using once
 
 const app = express();
+app.use(cors());
 app.use(express.json()); // This intercepts any requests with Application/json as the Content-Type and translates it to JS object
 
 // Use a router to break up our app into smaller sections
