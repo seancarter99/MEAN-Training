@@ -1,0 +1,12 @@
+<p>Hello, this is our main app component</p>
+<app-title [title]="'Students App'" [ngStyle]="{'font-size.px':24}"></app-title>
+
+<app-student-list [students]="currentStudents" [title]="'Current Students'"></app-student-list>
+<!--            [] is databinding [child-field]="parent-data"-->
+
+<app-student-list [students]="pastStudents" [title]="'Past Students'"></app-student-list>
+
+    <!--                                       $event is replaced with the value the event emitted  -->
+<app-add-student (newStudentEvent)="addStudent($event)"></app-add-student>
+<!--            inside () is the name of the event the child emits   -->
+<!--                        inside the "" need the method to run when event occurs -->

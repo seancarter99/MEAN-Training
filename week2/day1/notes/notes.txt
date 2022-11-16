@@ -52,9 +52,8 @@ Tags We've Seen So Far
 - section
 - nav
 - main
-TODO
-- a = anchor 
-ex (https://www.google.com/search?q=movies+now+playing+in+theaters&oq=movies+now+playing+in+theaters&aqs=chrome..69i57.4679j0j7&sourceid=chrome&ie=UTF-8)
+- a = anchor (links) attributes inclue: href and target
+- link = including external resources, rel="" and href=""
 - table
 - thead
 - tbody
@@ -65,9 +64,9 @@ ex (https://www.google.com/search?q=movies+now+playing+in+theaters&oq=movies+now
 CSS
 ----
 3 ways to apply styles
-  1. inline
-  2. internal
-  3. external
+  1. inline (use attribute style="")
+  2. internal (use tag <style></style>)
+  3. external (use external style.css and <link rel="stylesheet" href="style.css">)
 selectors
 - tag names
 - id's use #idname
@@ -76,20 +75,22 @@ selectors
 - relative vs absolute units
   - use absolute for font and border
   - use relative the rest the time
-
+properties
 - color
 - background-color
-- display: inline (or block or none etc.)
+- display: inline (or block or none or flex etc.)
 - width
 - height
-- 
+- margin
+- padding
 TODO
-- size
+- size - absolute (px, in, etc) vs relative (em, rem, vw, %)
 - position - absolute vs relative
 - box model - padding/margin
 - flexbox - wrap, justify, align, align-content
 
 PRACTICE
+---------
 - Create a html page about a vacation you took playing around with an image gallery 
 -- challenge: scale up your image when you hover!
 
@@ -98,4 +99,10 @@ Visual Studio Code
 - Install Live Server extension
 - Type ! [ENTER] to auto-generate basic html page elements
 - Right click > Open with Live Server
+keyboard shortcuts:
+- alt-click to edit multiple lines of text
+- ctrl-shift-k to delete lines
+- alt-shift-down to copy lines
+- ctrl-k ctrl-f to fix indentation of selected text
+
 

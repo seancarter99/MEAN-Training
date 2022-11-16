@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR Example GET</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            
+            document.getElementById("moviesBtn").addEventListener("click", () =>{
+                // create a request
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "http://localhost:9000/movies");
+                // set up a callback bc this is asynchronous
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === xhr.DONE) {
+                        var data = JSON.parse(xhr.responseText); // We are getting a back an object with 3 elements righ now
+                        console.log(data)
+                        console.log(data[0]);
+                        console.log(data[0].title)
+                        console.log(data.length)
+                        console.log(typeof data);
+                        // display it
+                        for (let i = 0; i < data.length; i++) {
+                            let row = document.createElement("tr");
+                            let col1 = document.createElement("td");
+                            let col2 = document.createElement("td");
+                            col1.innerHTML = data[i].title;
+                            col2.innerHTML = data[i].director;
+                            let tbody = document.querySelector("#moviesTable tbody");
+                            tbody.append(row);
+                            row.append(col1);
+                            row.append(col2);
+                        }
+                    } else {
+                        console.log(xhr.responseText)
+                    }
+                };
+                xhr.send();
+                // format
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="moviesBtn">Get Movies</button>
+    <div id="'movies">
+        <table id="moviesTable">
+            <thead>
+                <tr><th>Title</th><th>Director</th></tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2</title>
+    <!-- Simple DOM Manipulation-->
+    <script>
+        let counter = 0;
+
+        function increment() {
+            counter++;
+            console.log(counter);
+            document.getElementById("count").innerHTML = "<em>" + counter + "</em>";
+            console.log(document);
+            console.log(document.getElementById("example").innerText);
+            console.log(document.getElementById("example").innerHTML);
+
+        }
+
+    </script>
+</head>
+<body>
+    <p id="example">Counter is now <span id="count">0</span><!-- WILL THIS WORK? --></p>
+    <button onclick="increment()">Click Me!</button>
+</body>
+</html>
