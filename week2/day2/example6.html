@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("name-form").addEventListener("submit", (event) => {
+                event.preventDefault();
+                let formElem = event.target;
+                console.log(formElem);
+                // Grab info from the form
+                let data = new FormData(formElem);
+                console.log(...data);
+                let name = data.get("firstname")
+                // create a p element and add it to the students div
+                let p = document.createElement("p");
+                p.innerHTML = name;
+                // add element to the DOM
+                document.getElementById("students").append(p);
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- action="url" will redirect on submit -->
+    <form id="name-form" method="GET"> <!-- DEFAULT is GET change to POST for sensitive data -->
+        <input type="text" name="firstname" placeholder="Enter your first name"/>
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Students</h3>
+    <div id="students"></div>
+</body>
+</html>
