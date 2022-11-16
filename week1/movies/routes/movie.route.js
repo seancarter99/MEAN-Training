@@ -10,10 +10,11 @@ const { findAllMovies, findMovieById, findAllMoviesByGenre, createMovie, updateM
 // GET /movies
 
 // /movies
+// /movies?genre=drama
 router.get('/', async (req, res) => {
     let movies;
     if (req.query.genre) {
-        movies = await findAllMoviesByGenre(req.query.genre?.toLowerCase()); 
+        movies = await findAllMoviesByGenre(req.query.genre); 
     } else {
         movies = await findAllMovies();
     }
