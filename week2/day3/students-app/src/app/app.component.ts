@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from './models/student';
 
 // decorator -- tells Angular how to use this class
 @Component({
@@ -9,10 +10,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Students App';
 
-  currentStudents: string[] = ["Bob", "Sue", "Harry", "Ron", "Hermione"];
-  pastStudents: string[] = ["Jo"];
+  currentStudents: Student[] = [{name: "Bob"}, {name: "Sue", tuition: 40000}, {name: "Harry", tuition: 0}];
+  pastStudents: Student[] = [{name: "Jo"}];
 
   hello() {
     console.log("hello")
+  }
+
+  addStudent(value: Student) {
+    this.currentStudents.push(value);
   }
 }

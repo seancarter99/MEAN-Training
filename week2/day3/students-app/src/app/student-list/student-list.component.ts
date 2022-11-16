@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Student } from '../models/student';
 
 @Component({
   selector: 'app-student-list', // custom HTML TAG NAME
@@ -8,7 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StudentListComponent implements OnInit {
 
   @Input()
-  students: string[] = [];
+  title?: string; // we are not providing a default
+                  // ? tells TypeScript this value might be undefined
+                  // alertantive is " string | undefined"
+
+  @Input()
+  students: Student[] = [];
 
   constructor() {
    }

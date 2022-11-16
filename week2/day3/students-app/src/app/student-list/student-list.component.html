@@ -1,7 +1,11 @@
-<p>student-list works!</p>
+<h3>{{ title }}</h3>
 <ul>
     <!-- structural directive -- tells angular to create multiple of this element-->
-    <li *ngFor="let student of students">
-        {{ student }}
+    <!-- CAN'T HAVE 2 structural directives in the same tag-->
+    <!-- to get around this use the ng-container tag -->
+    <ng-container *ngFor="let student of students">
+    <li *ngIf="student">
+        {{ student.name }} <span *ngIf="student.tuition">, {{ student.tuition | currency }}</span>
     </li>
+    </ng-container>
 </ul>

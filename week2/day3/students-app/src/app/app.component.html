@@ -1,7 +1,12 @@
 <p>Hello, this is our main app component</p>
 <h1>{{ title }}</h1>
-<h3>Current Students</h3>
-<app-student-list [students]="currentStudents"></app-student-list>
+
+<app-student-list [students]="currentStudents" [title]="'Current Students'"></app-student-list>
 <!--            [] is databinding [child-field]="parent-data"-->
-<h3>Past Students</h3>
-<app-student-list [students]="pastStudents"></app-student-list>
+
+<app-student-list [students]="pastStudents" [title]="'Past Students'"></app-student-list>
+
+    <!--                                       $event is replaced with the value the event emitted  -->
+<app-add-student (newStudentEvent)="addStudent($event)"></app-add-student>
+<!--            inside () is the name of the event the child emits   -->
+<!--                        inside the "" need the method to run when event occurs -->

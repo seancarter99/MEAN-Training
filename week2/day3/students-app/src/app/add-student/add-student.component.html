@@ -1,0 +1,6 @@
+<h3>Add Student</h3>
+<form>
+    <input id="studentInput" placeholder="Enter Student Name" #student> <!-- give our input a name for angular to find it using #name -->
+    <!-- event binding notation uses ( ) -->
+    <button type="button" (click)="addNewStudent(student.value); student.value=''">Add Student</button>
+</form>
