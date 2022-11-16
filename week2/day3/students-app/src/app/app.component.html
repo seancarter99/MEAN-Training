@@ -1,5 +1,5 @@
 <p>Hello, this is our main app component</p>
-<h1>{{ title }}</h1>
+<app-title [title]="'Students App'" [ngStyle]="{'font-size.px':24}"></app-title>
 
 <app-student-list [students]="currentStudents" [title]="'Current Students'"></app-student-list>
 <!--            [] is databinding [child-field]="parent-data"-->
