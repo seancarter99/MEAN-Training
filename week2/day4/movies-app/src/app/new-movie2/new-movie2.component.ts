@@ -24,6 +24,8 @@ export class NewMovie2Component implements OnInit {
     actors: this.fb.array([])
   });
 
+  errorMessage?: string;
+
   constructor(private fb: FormBuilder, private movieService:MovieService) { }
 
   ngOnInit(): void {
@@ -41,7 +43,11 @@ export class NewMovie2Component implements OnInit {
       temp.actors.push(new Actor(c.value));
     }
 
-    this.movieService.saveMovie(temp).subscribe();
+    this.movieService.saveMovie(temp).subscribe({
+      next: res => {console.log('HTTP response', res), this.errorMessage = "";}, // first param is what to do on success
+      error: err => {console.log('HTTP error', err); this.errorMessage = "Error: Unable to save movie. Try again later."}, // second param is what to do on failure
+      complete: () => console.log('HTTP request completed') // third param is what to always do on completion
+  });
   }
 
   addActor() {

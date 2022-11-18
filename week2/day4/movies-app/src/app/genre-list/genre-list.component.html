@@ -1,0 +1,22 @@
+<h2>{{ title }} Movies</h2>
+
+<table class="table table-bordered table-striped table-hover table-dark">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Release Year</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let movie of movieList">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.director }}</td>
+            <td>{{ movie.releaseYear }}</td>
+        </tr>
+    </tbody>
+
+</table>
+<a routerLink="/movies">Back</a>

@@ -7,6 +7,8 @@
 <div id="movie-list">
     <h2>View All Movies</h2>
 
+    <a routerLink="/movies/comedy">Comedy</a> |  <a routerLink="/movies/drama">Drama</a> |  <a routerLink="/movies/action">Action</a> 
+
     <table class="table table-bordered table-striped table-hover table-dark">
         <thead>
             <tr>
@@ -34,9 +36,15 @@
                 <td>{{ movie.title }}</td>
                 <td>{{ movie.director }}</td>
                 <td>{{ movie.releaseYear }}</td>
-                <td>{{ movie.genre }}</td>
+                <td><a routerLink="/movies/{{movie.genre}}">{{ movie.genre }}</a></td> <!-- TODO make this cell clickable to load the genre page -->
             </tr>
         </tbody>
 
     </table>
+
+    
+    <div class="alert alert-danger" *ngIf="errorMessage" >
+        {{ errorMessage }}
+    </div>
+
 </div>

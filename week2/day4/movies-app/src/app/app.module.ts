@@ -12,6 +12,8 @@ import { GoatComponent } from './goat/goat.component';
 import { NewMovieComponent } from './new-movie/new-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewMovie2Component } from './new-movie2/new-movie2.component';
+import { GenreListComponent } from './genre-list/genre-list.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NewMovie2Component } from './new-movie2/new-movie2.component';
     MovieListComponent,
     GoatComponent,
     NewMovieComponent,
-    NewMovie2Component
+    NewMovie2Component,
+    GenreListComponent
   ],
   imports: [
     BrowserModule,

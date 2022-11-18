@@ -10,6 +10,8 @@ import { MovieService } from '../services/movie.service';
 export class NewMovieComponent implements OnInit {
   newMovie: Movie = new Movie("", "", ""); //we'll be adding to this through the form
 
+  errorMessage?: string;
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,9 @@ export class NewMovieComponent implements OnInit {
         && this.newMovie.genre.trim() != ""
         && this.newMovie.director.trim() != "") {
       //send the values
-      this.movieService.saveMovie(this.newMovie).subscribe();
-    }
+      this.movieService.saveMovie(this.newMovie).subscribe({
+        next: (v) => console.log(v),
+        error: (e) => {console.error(e), this.errorMessage = "Error: Unable to fetch movies. Try again later."; },
+        complete: () => console.info('complete')});
+        }}
   }
-}

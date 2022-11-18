@@ -40,6 +40,12 @@
         </div>
     </form>
 </div>
+<div class="alert alert-danger">
+    {{ errorMessage }}
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+</div>
 <div>
     <!-- this is a pipe. it takes the value and formats it -->
     {{ newMovie | json }}
