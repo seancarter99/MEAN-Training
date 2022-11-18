@@ -14,7 +14,7 @@ Which we used:
 `http://localhost:4200/movies/genre/action` 
 `http://localhost:4200/movies/genre/drama` 
 
-To play around with query parameters, see https://angular.io/guide/router#link-parameters-array
+To play around with query parameters, see https://angular.io/guide/router#link-parameters-array or https://www.tektutorialshub.com/angular/angular-passing-parameters-to-route/
 
 To make some parameterized subroutes, we can do the following:
 
