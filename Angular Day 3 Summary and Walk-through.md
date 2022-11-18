@@ -145,9 +145,3 @@ Make sure your backend is running, and then try testing the links you have added
 
 	1. Open your backend project and run `npm start`
 	2. Open the terminal in your front-end project folder and run `ng serve --open` 
-
-You should see something like:
-
-![[Pasted image 20221118154944.png]]
-
-![[Pasted image 20221118154855.png]]
