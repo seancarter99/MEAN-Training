@@ -5,6 +5,21 @@ Today we looked at how to use query parameters in our Angular routes. Query para
 
 `http://localhost:4200/movies?genre=comedy`
 
+Looking back, I lost track of this and instead we created some parameterized subroutes:
+
+`http://localhost:4200/movies/genre/{value}` 
+
+Which we used:
+`http://localhost:4200/movies/genre/comedy` 
+`http://localhost:4200/movies/genre/action` 
+`http://localhost:4200/movies/genre/drama` 
+
+To play around with query parameters, see https://www.tektutorialshub.com/angular/angular-passing-optional-query-parameters-to-route/
+
+To make some parameterized subroutes, we can do the following:
+
+# Adding Parameterized SubRoutes
+
 Routes allow our single-page application to switch which components are shown depending on the url. So far we have the `/movies` route showing the MovieListComponent and the `/new-movie` route showing the NewMovie2Component.
 
 Let's add a new component to display when the user searches for a particular genre.
