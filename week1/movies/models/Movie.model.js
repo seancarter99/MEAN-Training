@@ -17,6 +17,10 @@ const movieSchema = new Schema({
         },
         dob: Date // DOB is currently optional
     }],
+    genre: {
+        type: String,
+        required: true
+    },
     releaseYear: {
         type: Number,
         validate: [year => year >= 1700, 'Release Year must be after 1700 AD']

@@ -4,14 +4,20 @@
 // const router = express.Router();
 
 const router = require('express').Router();
-const { findAllMovies, findMovieById, createMovie, updateMovieById, deleteMovieById } = require('../controllers/movie.controller.js');
+const { findAllMovies, findMovieById, findAllMoviesByGenre, createMovie, updateMovieById, deleteMovieById } = require('../controllers/movie.controller.js');
 
 // Write an endpoint that returns ALL movies
 // GET /movies
 
 // /movies
+// /movies?genre=drama
 router.get('/', async (req, res) => {
-    const movies = await findAllMovies();
+    let movies;
+    if (req.query.genre) {
+        movies = await findAllMoviesByGenre(req.query.genre); 
+    } else {
+        movies = await findAllMovies();
+    }
     
     // res.json is res.send() while also setting the Content-Type to be application/json
     res.json(movies);

@@ -13,6 +13,8 @@ const findMovieById = async id => {
     return movie;
 }
 
+const findAllMoviesByGenre = async genre => await Movie.find({genre: { $regex: new RegExp(`^${genre.toLowerCase()}$`, "i") }});
+
 const createMovie = async movieData => {
     // new Movie() // Our Movie class's constructor may be used to create a movie document
     const movie = new Movie(movieData);
@@ -36,4 +38,4 @@ const deleteMovieById = async id => {
     await Movie.findByIdAndDelete(id);
 }
 
-module.exports = { findAllMovies, findMovieById, createMovie, updateMovieById, deleteMovieById };
+module.exports = { findAllMovies, findMovieById, createMovie, updateMovieById, deleteMovieById, findAllMoviesByGenre };
