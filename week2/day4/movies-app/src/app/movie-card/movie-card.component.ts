@@ -9,7 +9,7 @@ import { Movie } from '../models/movie';
 })
 export class MovieCardComponent implements OnInit {
 
-  movie: Movie = new Movie("something", "someone", "miscilaneous");
+  movie: Movie = new Movie("something", "someone", "action");
 
   constructor() { }
 
