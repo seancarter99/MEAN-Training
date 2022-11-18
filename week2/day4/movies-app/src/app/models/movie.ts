@@ -8,16 +8,19 @@ export class Movie {
 
    actors: Actor[] = [];
 
+   genre: string;
+
    releaseYear?: number;
 
    imageUrl?: string;
 
-   category: string;// TODO add category to backend before use this
+   //category: string;// TODO add category to backend before use this
 
-   constructor(title: string, director: string, category: string) {
+   constructor(title: string, director: string, genre: string) {
     this.title = title;
     this.director = director;
-    this.category = category;
+    this.genre = genre;
+    //this.category = category;
    }
 
 }

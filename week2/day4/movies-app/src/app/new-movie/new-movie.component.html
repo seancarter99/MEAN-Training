@@ -1,0 +1,46 @@
+<div>
+    <h2>Add Movie</h2>
+
+    <!-- named the form so i could call reset after processing
+        reset is a built in method
+        used two way binding to get the input to connect to the model -->
+    <form id="new-movie" (ngSubmit)="save(); movieForm.reset();" #movieForm>
+        <!-- title -->
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input [(ngModel)]="newMovie.title" type="text" class="form-control" name="Title" id="Title" required #Title="ngModel"/>
+            <div class="alert" *ngIf="Title.invalid && (Title.dirty || Title.touched)">
+                <!-- dirty = they typed something
+                     touched = they interacted with it -->
+                <!-- conditionally render -->
+                <div *ngIf="Title.errors?.['required']">Title is required</div>
+            </div>
+        </div>
+
+        <!-- director -->
+        <div class="form-group">
+            <label for="Director">Director</label>
+            <input [(ngModel)]="newMovie.director" type="text" class="form-control" name="Director" id="Director" #Director="ngModel"/>
+        </div>
+
+        <!-- genre -->
+        <div class="form-group">
+            <label for="Genre">Genre</label>
+            <input [(ngModel)]="newMovie.genre" type="text" class="form-control" name="Genre" id="Genre" #Genre="ngModel"/>
+        </div>
+
+        <!-- release year -->
+        <div class="form-group">
+            <label for="Year">Release Year</label>
+            <input [(ngModel)]="newMovie.releaseYear" type="number" class="form-control" name="Year" id="Year" min="1970" step="10" #Year="ngModel"/>
+        </div>
+
+        <div style="margin-top: 5px;">
+            <input class="btn btn-success" type="submit" value="Save"/>
+        </div>
+    </form>
+</div>
+<div>
+    <!-- this is a pipe. it takes the value and formats it -->
+    {{ newMovie | json }}
+</div>
